@@ -1,0 +1,39 @@
+<!--<table border="3">
+    <tr>
+        <td>id</td>
+        <td> name</td>
+        <td>address</td>
+        <td>image</td>
+        <td>status</td>
+    </tr>
+    <tr *ngFor="let i of listResidences">
+        <td>{{i.id}}</td>
+        <td>{{i.name | uppercase}}</td>
+        <td>{{i.address}}</td>
+        <td> <img [src]="i.image" alt="img" width="100" height="100"></td>
+        <td>{{i.status}}</td>
+    </tr>
+</table>
+<input type="text" [(ngModel)]="s">
+<div *ngFor="let i of listResidences">
+    <div *ngIf="s==i.name">
+        <ul>
+            <li>{{i.name}}</li>
+        </ul>
+    </div>
+    
+
+</div>-->
+
+<div  class="row">
+<div *ngFor="let i of listResidences" class="card m-3" style="width: 18rem;">
+    <img [src]="i.image" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{i.name | uppercase}}</h5>
+      <h5 class="card-title">{{i.status}}</h5>
+      <p class="card-text">{{i.address}}</p>
+      <a href="#" class="btn btn-primary" (click)="show(i)">show location</a>
+      <button class="btn btn-success" (click)="listefavoris(i)">{{isfavoris(i) ? "unlike"  : "like" }}</button>
+    </div>
+  </div>
+</div>
